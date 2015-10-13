@@ -11,7 +11,7 @@
 @interface LogInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passwordTextField;
-
+@property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @end
 
 @implementation LogInViewController
@@ -24,6 +24,8 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)submitButtonDidPress:(id)sender {
 }
 
 /*
