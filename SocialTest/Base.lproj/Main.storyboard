@@ -88,7 +88,7 @@
                                     <constraint firstAttribute="height" constant="21" id="XWi-VT-1X2"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -158,7 +158,7 @@
                                     <constraint firstAttribute="height" constant="21" id="6zs-NF-kIp"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -185,6 +185,53 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prf-YV-fzO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1874" y="-56"/>
+        </scene>
+        <!--BlessViewController-->
+        <scene sceneID="B6E-3p-obv">
+            <objects>
+                <viewController storyboardIdentifier="BlessViewController" title="BlessViewController" id="dTF-2D-tf3" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0Lx-v6-R2i"/>
+                        <viewControllerLayoutGuide type="bottom" id="SNp-Yf-FKi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BWA-DR-YTl">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ping Friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4N-HD-cgy">
+                                <rect key="frame" x="238" y="271" width="124" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jSj-9h-E5L"/>
+                                    <constraint firstAttribute="width" constant="124" id="nEk-PH-d4s"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-Lk-0YP">
+                                <rect key="frame" x="251" y="300" width="97" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="97" id="gPD-st-nzz"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="top" secondItem="p4N-HD-cgy" secondAttribute="bottom" constant="8" symbolic="YES" id="96s-4j-KSR"/>
+                            <constraint firstItem="p4N-HD-cgy" firstAttribute="centerX" secondItem="BWA-DR-YTl" secondAttribute="centerX" id="fDC-4J-zJf"/>
+                            <constraint firstItem="p4N-HD-cgy" firstAttribute="top" secondItem="0Lx-v6-R2i" secondAttribute="bottom" constant="251" id="jLI-6S-OND"/>
+                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="centerX" secondItem="p4N-HD-cgy" secondAttribute="centerX" id="vJS-hC-isy"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cb5-bU-VLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2644" y="-380"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4EP-2u-Mf0">

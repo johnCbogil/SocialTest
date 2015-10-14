@@ -31,6 +31,9 @@
                                     block:^(PFUser *user, NSError *error) {
                                         if (user) {
                                             NSLog(@"login successful");
+                                            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+                                            UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BlessViewController"];
+                                            [self.navigationController pushViewController:vc animated:YES];
                                         } else {
                                             NSLog(@"login NOT successful");
                                             UIAlertController *signUpAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"login NOT successful" preferredStyle:UIAlertControllerStyleAlert];

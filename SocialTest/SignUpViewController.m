@@ -29,15 +29,15 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)submitButtonDidPress:(id)sender {
-    //    PFObject *testObject = [PFObject objectWithClassName:@"TestObject"];
-    //    testObject[@"foo"] = @"bar";
-    //    [testObject saveInBackground];
-    
     PFUser *user = [PFUser user];
     user.username = self.createUsernameTextField.text;
     user.password = self.createPasswordTextField.text;
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
-        if (!error) {   // Hooray! Let them use the app now.
+        if (!error) {
+            // USER LOGS IN
+            UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+            UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BlessViewController"];
+            [self.navigationController pushViewController:vc animated:YES];
         }
         else {
             NSString *errorString = [error userInfo][@"error"];
