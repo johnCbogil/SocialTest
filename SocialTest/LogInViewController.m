@@ -7,6 +7,7 @@
 //
 
 #import "LogInViewController.h"
+#import <Parse/Parse.h>
 
 @interface LogInViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *usernameTextField;
@@ -26,6 +27,23 @@
     // Dispose of any resources that can be recreated.
 }
 - (IBAction)submitButtonDidPress:(id)sender {
+    [PFUser logInWithUsernameInBackground:self.usernameTextField.text password:self.passwordTextField.text
+                                    block:^(PFUser *user, NSError *error) {
+                                        if (user) {
+                                            NSLog(@"login successful");
+                                        } else {
+                                            NSLog(@"login NOT successful");
+                                            UIAlertController *signUpAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"login NOT successful" preferredStyle:UIAlertControllerStyleAlert];
+                                            UIAlertAction *okAction = [UIAlertAction
+                                                                       actionWithTitle:NSLocalizedString(@"OK", @"OK action")
+                                                                       style:UIAlertActionStyleDefault
+                                                                       handler:^(UIAlertAction *action)
+                                                                       {
+                                                                           NSLog(@"OK action");
+                                                                       }];
+                                            [signUpAlert addAction:okAction];
+                                            [self presentViewController:signUpAlert animated:YES completion:nil];}
+                                    }];
 }
 
 /*
