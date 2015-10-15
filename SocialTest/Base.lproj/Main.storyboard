@@ -189,7 +189,7 @@
         <!--BlessViewController-->
         <scene sceneID="B6E-3p-obv">
             <objects>
-                <viewController storyboardIdentifier="BlessViewController" title="BlessViewController" id="dTF-2D-tf3" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BlessViewController" title="BlessViewController" id="dTF-2D-tf3" customClass="PingFriendViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0Lx-v6-R2i"/>
                         <viewControllerLayoutGuide type="bottom" id="SNp-Yf-FKi"/>
@@ -198,36 +198,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ping Friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4N-HD-cgy">
-                                <rect key="frame" x="238" y="271" width="124" height="21"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-Lk-0YP">
+                                <rect key="frame" x="251" y="143" width="97" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="21" id="jSj-9h-E5L"/>
-                                    <constraint firstAttribute="width" constant="124" id="nEk-PH-d4s"/>
+                                    <constraint firstAttribute="width" constant="97" id="FK3-qO-dSn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K9w-IM-lOH">
+                                <rect key="frame" x="276" y="181" width="46" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="Sc2-9d-FbP"/>
+                                </constraints>
+                                <state key="normal" title="Send"/>
+                                <connections>
+                                    <action selector="sendButtonDidPress:" destination="dTF-2D-tf3" eventType="touchUpInside" id="wkl-lh-uv0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ping Friend" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p4N-HD-cgy">
+                                <rect key="frame" x="238" y="114" width="124" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="124" id="SI6-rd-n7X"/>
+                                    <constraint firstAttribute="height" constant="21" id="r1H-SD-0ii"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aXZ-Lk-0YP">
-                                <rect key="frame" x="251" y="300" width="97" height="30"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="gPD-st-nzz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="top" secondItem="p4N-HD-cgy" secondAttribute="bottom" constant="8" symbolic="YES" id="96s-4j-KSR"/>
-                            <constraint firstItem="p4N-HD-cgy" firstAttribute="centerX" secondItem="BWA-DR-YTl" secondAttribute="centerX" id="fDC-4J-zJf"/>
-                            <constraint firstItem="p4N-HD-cgy" firstAttribute="top" secondItem="0Lx-v6-R2i" secondAttribute="bottom" constant="251" id="jLI-6S-OND"/>
-                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="centerX" secondItem="p4N-HD-cgy" secondAttribute="centerX" id="vJS-hC-isy"/>
+                            <constraint firstItem="K9w-IM-lOH" firstAttribute="centerX" secondItem="aXZ-Lk-0YP" secondAttribute="centerX" id="8ZC-b0-MFw"/>
+                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="centerX" secondItem="BWA-DR-YTl" secondAttribute="centerX" id="8dd-b7-dUD"/>
+                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="centerX" secondItem="p4N-HD-cgy" secondAttribute="centerX" id="CwY-U3-lnZ"/>
+                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="top" secondItem="p4N-HD-cgy" secondAttribute="bottom" constant="8" symbolic="YES" id="I4f-s2-V7d"/>
+                            <constraint firstItem="SNp-Yf-FKi" firstAttribute="top" secondItem="K9w-IM-lOH" secondAttribute="bottom" constant="389" id="Zqe-Uw-egY"/>
+                            <constraint firstItem="K9w-IM-lOH" firstAttribute="top" secondItem="aXZ-Lk-0YP" secondAttribute="bottom" constant="8" symbolic="YES" id="vsf-4t-U5O"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="enterFriendTextField" destination="aXZ-Lk-0YP" id="idc-SL-kJH"/>
+                        <outlet property="pingFriendLabel" destination="p4N-HD-cgy" id="7ov-2s-o2b"/>
+                        <outlet property="sendButton" destination="K9w-IM-lOH" id="SDY-wq-mkT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cb5-bU-VLH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

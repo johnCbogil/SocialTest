@@ -15,6 +15,7 @@
 		52A7C2F81BCDA8DE00F597F6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52A7C2F61BCDA8DE00F597F6 /* LaunchScreen.storyboard */; };
 		52F373111BCDAB4F0058E2F8 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F373101BCDAB4F0058E2F8 /* SignUpViewController.m */; settings = {ASSET_TAGS = (); }; };
 		52F373141BCDAB5D0058E2F8 /* LogInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52F373131BCDAB5D0058E2F8 /* LogInViewController.m */; settings = {ASSET_TAGS = (); }; };
+		52FE28F01BCF13D600E5D197 /* PingFriendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52FE28EF1BCF13D600E5D197 /* PingFriendViewController.m */; settings = {ASSET_TAGS = (); }; };
 		C537FB4D149090A2FCE30ABB /* libPods-SocialTest.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C96F3DAE080F03C55E97F034 /* libPods-SocialTest.a */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,8 @@
 		52F373101BCDAB4F0058E2F8 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		52F373121BCDAB5D0058E2F8 /* LogInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LogInViewController.h; sourceTree = "<group>"; };
 		52F373131BCDAB5D0058E2F8 /* LogInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LogInViewController.m; sourceTree = "<group>"; };
+		52FE28EE1BCF13D600E5D197 /* PingFriendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PingFriendViewController.h; sourceTree = "<group>"; };
+		52FE28EF1BCF13D600E5D197 /* PingFriendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PingFriendViewController.m; sourceTree = "<group>"; };
 		744B4FABFC177783764EBF5B /* Pods-SocialTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTest/Pods-SocialTest.debug.xcconfig"; sourceTree = "<group>"; };
 		C7ED85EC711E6407B34BBD6F /* Pods-SocialTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SocialTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-SocialTest/Pods-SocialTest.release.xcconfig"; sourceTree = "<group>"; };
 		C96F3DAE080F03C55E97F034 /* libPods-SocialTest.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SocialTest.a"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +79,8 @@
 				52A7C2EE1BCDA8DE00F597F6 /* HomeViewController.h */,
 				52A7C2EF1BCDA8DE00F597F6 /* HomeViewController.m */,
 				52A7C2F11BCDA8DE00F597F6 /* Main.storyboard */,
+				52FE28EE1BCF13D600E5D197 /* PingFriendViewController.h */,
+				52FE28EF1BCF13D600E5D197 /* PingFriendViewController.m */,
 				52F3730F1BCDAB4F0058E2F8 /* SignUpViewController.h */,
 				52F373101BCDAB4F0058E2F8 /* SignUpViewController.m */,
 				52F373121BCDAB5D0058E2F8 /* LogInViewController.h */,
@@ -221,6 +226,7 @@
 			files = (
 				52A7C2F01BCDA8DE00F597F6 /* HomeViewController.m in Sources */,
 				52A7C2ED1BCDA8DE00F597F6 /* AppDelegate.m in Sources */,
+				52FE28F01BCF13D600E5D197 /* PingFriendViewController.m in Sources */,
 				52F373141BCDAB5D0058E2F8 /* LogInViewController.m in Sources */,
 				52F373111BCDAB4F0058E2F8 /* SignUpViewController.m in Sources */,
 				52A7C2EA1BCDA8DE00F597F6 /* main.m in Sources */,

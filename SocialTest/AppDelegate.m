@@ -29,12 +29,24 @@
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
     
-    PFQuery *pushQuery = [PFInstallation query];
-    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
     
-    // Send push notification to query
-    [PFPush sendPushMessageToQueryInBackground:pushQuery
-                                   withMessage:@"Hello World!"];
+//    
+//    // Extract the notification data
+//    NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
+//
+//    // Create a pointer to the Photo object
+//    NSString *photoId = [notificationPayload objectForKey:@"p"];
+//    PFObject *targetPhoto = [PFObject objectWithoutDataWithClassName:@"Photo"   objectId:photoId];
+//    
+//    // Fetch photo object
+//    [targetPhoto fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+//        // Show photo view controller
+//        if (!error) {
+//            PhotoVC *viewController = [[PhotoVC alloc] initWithPhoto:object];
+//            [self.navController pushViewController:viewController animated:YES];
+//        }
+//    }];
+
 
     return YES;
 }
