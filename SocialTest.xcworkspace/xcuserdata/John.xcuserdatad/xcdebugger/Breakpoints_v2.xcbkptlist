@@ -30,12 +30,12 @@
                   moduleName = "SocialTest"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/John/Documents/SocialTest/Pods/Bolts/Bolts/Common/BFTask.m"
-                  timestampString = "466559953.339543"
+                  timestampString = "466725056.20498"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "18"
                   endingLineNumber = "18"
-                  offsetFromSymbolStart = "11">
+                  offsetFromSymbolStart = "0">
                </Location>
             </Locations>
          </BreakpointContent>

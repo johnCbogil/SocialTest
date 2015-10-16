@@ -13,6 +13,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *pingFriendLabel;
 @property (weak, nonatomic) IBOutlet UITextField *enterFriendTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UIButton *logoutButton;
 
 @end
 
@@ -20,24 +21,16 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-//    
-//    PFQuery *pushQuery = [PFInstallation query];
-//    [pushQuery whereKey:@"deviceType" equalTo:@"ios"];
-//    
-//    // Send push notification to query
-//    [PFPush sendPushMessageToQueryInBackground:pushQuery
-//                                   withMessage:@"Hello World!"];
+    PFInstallation *installation = [PFInstallation currentInstallation];
 
-    
-    PFUser *user = [PFUser currentUser];
-    [[PFUser currentUser] setObject:self.enterFriendTextField.text forKey:@"usernameToPing"];
-    
-    PFInstallation *myinstallation = [PFInstallation currentInstallation];
-    [myinstallation setObject:user forKey:@"Owner"];
-    
-    [myinstallation setObject:user forKey:@"User"];
-    [myinstallation saveInBackground];
+    // Associate the device with a user
+    if (installation[@"user"]) {
+    }
+    else {
+        //save it like this
+        installation[@"user"] = [PFUser currentUser];
+        [installation saveInBackground];    }
+
     
 }
 
@@ -48,30 +41,36 @@
 
 -(void)sendPushNotification
 {
-    // get the PFUser object for friend
-    PFQuery *userQuery=[PFUser query];
+    // Create a user query with the entered text
+    PFQuery *userQuery = [PFUser query];
     [userQuery whereKey:@"username" equalTo:self.enterFriendTextField.text];
-    //here ClientFBId is facebook id of receiver to whom Push Notification is sent
     
-    // send push notification to the user
+    NSLog(@"cnt=%ld", (long)userQuery.countObjects);
+
+    // Find devices associated with these users
     PFQuery *pushQuery = [PFInstallation query];
-    [pushQuery whereKey:@"Owner" matchesQuery:userQuery];
-    PFPush *push = [PFPush new];
-    [push setQuery: pushQuery];
-    NSString *message=[NSString stringWithFormat:@"%@ just blessed you 🙏", [PFUser currentUser].username];
+    [pushQuery whereKey:@"user" matchesQuery:userQuery];
     
-    NSDictionary *data = [NSDictionary dictionaryWithObjectsAndKeys:
-                          message, @"alert",
-                          @"Increment", @"badge",
-                          @"cheering.caf", @"sound",
-                          nil];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-        [PFPush sendPushDataToQuery:pushQuery withData:data error:nil];
-    });
-    
+    // Send push notification to query
+    PFPush *push = [[PFPush alloc] init];
+    [push setQuery:pushQuery]; // Set our Installation query
+    [push setMessage:[NSString stringWithFormat:@"%@ just blessed you 🙏", [PFUser currentUser].username]];
+    [push sendPushInBackground];
 }
 - (IBAction)sendButtonDidPress:(id)sender {
     [self sendPushNotification];
+}
+- (IBAction)logoutButtonDidPress:(id)sender {
+    [PFUser logOut];
+//    PFUser *currentUser = [PFUser currentUser]; // this will now be nil
+    
+    
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"HomeViewController"];
+
+    
+    [self presentViewController:viewController animated:YES completion:nil];
 }
 
 /*

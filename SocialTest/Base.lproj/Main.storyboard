@@ -2,12 +2,13 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Mx4-5e-ftj">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="HomeViewController" id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -202,7 +203,7 @@
                                 <rect key="frame" x="251" y="143" width="97" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="97" id="FK3-qO-dSn"/>
+                                    <constraint firstAttribute="width" constant="97" id="4Rs-72-15S"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -211,7 +212,7 @@
                                 <rect key="frame" x="276" y="181" width="46" height="30"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="46" id="Sc2-9d-FbP"/>
+                                    <constraint firstAttribute="width" constant="46" id="WhB-Ql-eqp"/>
                                 </constraints>
                                 <state key="normal" title="Send"/>
                                 <connections>
@@ -222,27 +223,41 @@
                                 <rect key="frame" x="238" y="114" width="124" height="21"/>
                                 <animations/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="124" id="SI6-rd-n7X"/>
-                                    <constraint firstAttribute="height" constant="21" id="r1H-SD-0ii"/>
+                                    <constraint firstAttribute="height" constant="21" id="HTy-PM-us0"/>
+                                    <constraint firstAttribute="width" constant="124" id="iM5-AO-0ey"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z3G-WX-rAf">
+                                <rect key="frame" x="20" y="20" width="75" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="75" id="VAb-XL-ILT"/>
+                                </constraints>
+                                <state key="normal" title="Logout ✌️"/>
+                                <connections>
+                                    <action selector="logoutButtonDidPress:" destination="dTF-2D-tf3" eventType="touchUpInside" id="wlB-QJ-T2p"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="K9w-IM-lOH" firstAttribute="centerX" secondItem="aXZ-Lk-0YP" secondAttribute="centerX" id="8ZC-b0-MFw"/>
-                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="centerX" secondItem="BWA-DR-YTl" secondAttribute="centerX" id="8dd-b7-dUD"/>
-                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="centerX" secondItem="p4N-HD-cgy" secondAttribute="centerX" id="CwY-U3-lnZ"/>
-                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="top" secondItem="p4N-HD-cgy" secondAttribute="bottom" constant="8" symbolic="YES" id="I4f-s2-V7d"/>
-                            <constraint firstItem="SNp-Yf-FKi" firstAttribute="top" secondItem="K9w-IM-lOH" secondAttribute="bottom" constant="389" id="Zqe-Uw-egY"/>
-                            <constraint firstItem="K9w-IM-lOH" firstAttribute="top" secondItem="aXZ-Lk-0YP" secondAttribute="bottom" constant="8" symbolic="YES" id="vsf-4t-U5O"/>
+                            <constraint firstItem="z3G-WX-rAf" firstAttribute="top" secondItem="0Lx-v6-R2i" secondAttribute="bottom" id="7fS-jW-5Nq"/>
+                            <constraint firstItem="p4N-HD-cgy" firstAttribute="centerX" secondItem="aXZ-Lk-0YP" secondAttribute="centerX" id="Fhz-sh-6al"/>
+                            <constraint firstItem="p4N-HD-cgy" firstAttribute="top" secondItem="0Lx-v6-R2i" secondAttribute="bottom" constant="94" id="KHv-0E-h4T"/>
+                            <constraint firstItem="z3G-WX-rAf" firstAttribute="leading" secondItem="BWA-DR-YTl" secondAttribute="leadingMargin" id="QST-jd-8YI"/>
+                            <constraint firstItem="K9w-IM-lOH" firstAttribute="top" secondItem="aXZ-Lk-0YP" secondAttribute="bottom" constant="8" symbolic="YES" id="Rzi-jE-8Ka"/>
+                            <constraint firstItem="p4N-HD-cgy" firstAttribute="centerX" secondItem="BWA-DR-YTl" secondAttribute="centerX" id="YNS-rn-phn"/>
+                            <constraint firstItem="aXZ-Lk-0YP" firstAttribute="top" secondItem="p4N-HD-cgy" secondAttribute="bottom" constant="8" symbolic="YES" id="lUH-8h-kEg"/>
+                            <constraint firstItem="K9w-IM-lOH" firstAttribute="centerX" secondItem="aXZ-Lk-0YP" secondAttribute="centerX" id="zzg-Oc-b92"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="enterFriendTextField" destination="aXZ-Lk-0YP" id="idc-SL-kJH"/>
+                        <outlet property="logoutButton" destination="z3G-WX-rAf" id="NXh-uN-WQG"/>
                         <outlet property="pingFriendLabel" destination="p4N-HD-cgy" id="7ov-2s-o2b"/>
                         <outlet property="sendButton" destination="K9w-IM-lOH" id="SDY-wq-mkT"/>
                     </connections>

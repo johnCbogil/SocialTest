@@ -37,7 +37,7 @@
             // USER LOGS IN
             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
             UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BlessViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
+            [self presentViewController:vc animated:YES completion:nil];
         }
         else {
             NSString *errorString = [error userInfo][@"error"];

@@ -33,7 +33,7 @@
                                             NSLog(@"login successful");
                                             UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
                                             UIViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"BlessViewController"];
-                                            [self.navigationController pushViewController:vc animated:YES];
+                                            [self presentViewController:vc animated:YES completion:nil];
                                         } else {
                                             NSLog(@"login NOT successful");
                                             UIAlertController *signUpAlert = [UIAlertController alertControllerWithTitle:@"Error" message:@"login NOT successful" preferredStyle:UIAlertControllerStyleAlert];

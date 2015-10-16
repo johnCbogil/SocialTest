@@ -28,24 +28,18 @@
                                                                              categories:nil];
     [application registerUserNotificationSettings:settings];
     [application registerForRemoteNotifications];
+    PFUser *currentUser = [PFUser currentUser];
     
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
     
-//    
-//    // Extract the notification data
-//    NSDictionary *notificationPayload = launchOptions[UIApplicationLaunchOptionsRemoteNotificationKey];
-//
-//    // Create a pointer to the Photo object
-//    NSString *photoId = [notificationPayload objectForKey:@"p"];
-//    PFObject *targetPhoto = [PFObject objectWithoutDataWithClassName:@"Photo"   objectId:photoId];
-//    
-//    // Fetch photo object
-//    [targetPhoto fetchIfNeededInBackgroundWithBlock:^(PFObject *object, NSError *error) {
-//        // Show photo view controller
-//        if (!error) {
-//            PhotoVC *viewController = [[PhotoVC alloc] initWithPhoto:object];
-//            [self.navController pushViewController:viewController animated:YES];
-//        }
-//    }];
+    UIViewController *viewController = [storyboard instantiateViewControllerWithIdentifier:@"BlessViewController"];
+
+    
+    if (currentUser) {
+        self.window.rootViewController = viewController;
+    } else {
+        // show the signup or login screen
+    }
 
 
     return YES;
